@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+	overflow: hidden;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.grauerBlock {
+	background-color: whitesmoke;
+	top: 0;	
+	width: 100%;
+	padding: 25px 0;
+}
+
+.container {
+	position: relative;
+	width: 1024px;
+	min-height: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+
+.header {
+	text-align: center;
+	color: black;
+	height: 100px
+}
+
+.main {
+	text-align: justify;
+}
+
+.impressum{
+	background-color: #333;
+	color: white;
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	padding: 12px 0;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+img {
+	max-width: 30%;
+	height: auto;
+	position: relative;
+	left: 3%;
+}
+
+hr {
+	height: 3px;
+	background: black;
+}
+
+#wrapper
+{
+  border: 1px solid #888;
+  display: inline-block;
+  padding:15px;
+ 
+}
+
+/*andere Button */
+input[class=button] {
+	border:ridge 1px black;
+	background-color:whitesmoke;
+	padding: 7px 13px;
+}
+
+input[id=input]:hover {
+	cursor: pointer;
+}
+
+input[type=radio]:hover {
+	cursor: pointer;
+}
+
+/* English button */
+input[id=englishButton]{
+	background-color:whitesmoke;
+	border: none;
+	position: absolute;
+	right: 3%;
+}
+
+input[id=englishButton]:hover{
+	text-decoration: underline;
+	border: none;
+	background-color:whitesmoke;
+	cursor: pointer;
+}
+
+
+
+
