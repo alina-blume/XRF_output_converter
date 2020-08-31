@@ -175,6 +175,9 @@
 					if (calculatedOutput[i][j].includes(",00") === true){
 						calculatedOutput[i][j] = calculatedOutput[i][j].replace(",00", "");
 					}			
+					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}	
 				} 
 			}   
 	
@@ -343,7 +346,10 @@ function oxideKommaMittelwert (uploadedData){
 					}
 					if (calculatedOutput[i][j].includes(",0000") === true){
 						calculatedOutput[i][j] = calculatedOutput[i][j].replace(",0000", "");
-					}			
+					}
+					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}
 				} 
 			}   
 	
@@ -512,7 +518,10 @@ function oxideKommaMittelwert (uploadedData){
 					//}
 					if (calculatedOutput[i][j].includes(".00") === true){
 						calculatedOutput[i][j] = calculatedOutput[i][j].replace(".00", "");
-					}			
+					}
+					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}
 				} 
 			}   
 	
@@ -681,7 +690,10 @@ function oxidePunktMittelwert (uploadedData){
 					//}
 					if (calculatedOutput[i][j].includes(".0000") === true){
 						calculatedOutput[i][j] = calculatedOutput[i][j].replace(".0000", "");
-					}			
+					}
+					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}
 				} 
 			}   
 	
