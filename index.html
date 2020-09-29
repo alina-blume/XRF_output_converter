@@ -12,7 +12,6 @@
 	
 		<div class="grauerBlock">
 			<img src="PGG-Logo_DE.png " alt="Logo PGG">
-			<!-- <input type="button" value="English" id="englishButton"/> -->
 		</div>
 		
 		<div class="container">
@@ -23,14 +22,15 @@
 			<div class="main" >
 				
 				Nach Auswahl einer Textdatei wird pro Probe entweder <br>
-				- der Mittelwert des Elementgehalts und dessen absoluten Fehler in mg/kg oder <br>
-				- der Mittelwert des Oxidgehalts und dessen absoluten Fehler in % <br>
+				- der Mittelwert der Elementgehalt und dessen absoluten Fehler in mg/kg oder <br>
+				- der Mittelwert die Oxidgehalt und dessen absoluten Fehler in % <br>
 				berechnet und als neue Textdatei zurückgegeben.
 				
 				<div class="machwas">
 					<br>
 					<form method="post" enctype="multipart/form-data">
 					
+					<div id="container">
 						<div id="wrapper">
 						<label for="yes_no_radio">Was soll berechnet werden?</label>
 						<p> 
@@ -43,18 +43,38 @@
 						
 						<div id="wrapper">
 						<label for="yes_no_radio">Welches Dezimaltrennzeichen soll verwendet werden?</label>
-						<p> 
-						<input  id="Punkt" type="radio" name="Komma_Punkt" >Punkt</input>
-						</p>
 						<p>
 						<input  id="Komma" type="radio" name="Komma_Punkt">Komma</input>
 						</p>
+						<p> 
+						<input  id="Punkt" type="radio" name="Komma_Punkt">Punkt</input>
+						</p>
 						</div>
 						
-						<br> 
+						<div id="wrapper">
+						<label for="yes_no_radio">Sollen Spalten mit weniger als 1/3 Inhalt gelöscht werden?</label>
+						<p> 
+						<input  id="Ja" type="radio" name="Ja_Nein" >Ja</input>
+						</p>
+						<p>
+						<input  id="Nein" type="radio" name="Ja_Nein">Nein</input>
+						</p>
+						</div>
+						
+						<div id="wrapper">
+						<label for="yes_no_radio">Sollen Errorspalten entfernt werden?</label>
+						<p> 
+						<input  id="Error_nein" type="radio" name="Error_Ja_Nein" >Nein</input>
+						</p>
+						<p>
+						<input  id="Error_ja" type="radio" name="Error_Ja_Nein">Ja</input>
+						</p>
+						</div>
+						
+						</div> 
+						
 						<br>
 						<label>Wählen Sie eine Textdatei (*.txt) von Ihrem Rechner aus. </label>  
-						<br>
 						<br>
 						<input id="input" name="datei" type="file" size="50" accept="*.txt"> 
 						<ul id="output"></ul>						
@@ -80,7 +100,10 @@
 		<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.js"></script>
 		<script src='https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/excel-builder/2.0.3/excel-builder.dist.min.js"></script>
 		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.7/xlsx.min.js"></script>
 		<script src='main.js'></script>
 	</body>
 </html>
+
