@@ -78,19 +78,13 @@
 			oxidePunktMittelwertNeinError(evt.target.result);
 			}
 			
-			
-			
+				
 			else {
 				alert("In jedem Block muss eine Auswahl getroffen werden ausgewählt sein");
 			}
         }
 
-    }    
-	
-
-/* 	d3.text("Datensatz/Kopie_von_BAK_5.txt").then(function(data) {
-	oxideKommaMittelwertJaError(data);
-});  */  
+    }   
 
 	// Header Strings
 	var header_El = "Element	Bescheibung	Methode	Auswertung	Na	Na_error	Mg	Mg_error	Al	Al_error	Si	Si_error	P	P_error	S	S_error	Cl	Cl_error	K	K_error	Ca	Ca_error	Ti	Ti_error	V	V_error	Cr	Cr_error	Mn	Mn_error	Fe	Fe_error	Co	Co_error	Ni	Ni_error	Cu	Cu_error	Zn	Zn_error	Ga	Ga_error	Ge	Ge_error	As	As_error	Se	Se_error	Br	Br_error	Rb	Rb_error	Sr	Sr_error	Y	Y_error	Zr	Zr_error	Nb	Nb_error	Mo	Mo_error	Ag	Ag_error	Cd	Cd_error	Sn	Sn_error	Sb	Sb_error	Te	Te_error	I	I_error	Cs	Cs_error	Ba	Ba_error	La	La_error	Ce	Ce_error	Pr	Pr_error	Nd	Nd_error	Er	Er_error	Yb	Yb_error	Hf	Hf_error	Ta	Ta_error	W	W_error	Hg	Hg_error	Tl	Tl_error	Pb	Pb_error	Bi	Bi_error	Th	Th_error	U	U_error	Summenkonzentration	";
@@ -103,13 +97,12 @@
 	function elementKommaMittelwertNein (uploadedData){
 		processData(uploadedData);	
 	
-
 		function processData(data) {
 		
 			// extract date & data, merge, convert to tsv
 			var date = data.substr(0, 10);
 			var data = data.slice(1788);
-			
+		
 			var merge = header_El + "\n" + data;
 			var daten= d3.tsvParse(merge);			
 		
@@ -232,6 +225,14 @@
 					}			
 				} 
 			}   
+			
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			} 
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -283,9 +284,12 @@ function oxideKommaMittelwertNein (uploadedData){
 			
 			// extract date & data, merge, convert to tsv
 			var date = data.substr(0, 10);
-			var data = data.slice(1695);
+			var data = data.slice(1480);
+			
+			console.log(data);
 			var merge = header_Ox + "\n" + data;
 			var daten = d3.tsvParse(merge);
+	
 		
 			// header array & Dims
 			var headerNames = d3.keys(daten[0]);
@@ -407,7 +411,15 @@ function oxideKommaMittelwertNein (uploadedData){
 						calculatedOutput[i][j] = "";
 					}						
 				} 
-			}   
+			}  
+
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -579,11 +591,20 @@ function elementPunktMittelwertNein (uploadedData){
 					if (calculatedOutput[i][j].includes(".00") === true){
 						calculatedOutput[i][j] = calculatedOutput[i][j].replace(".00", "");
 					} */	
-					if (calculatedOutput[i][j] === "Not available"){
+ 					if (calculatedOutput[i][j] === "Not available"){
 						calculatedOutput[i][j] = "";
-					}						
+					}		 			
 				} 
-			}   
+			} 
+			
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			} 
+			
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -636,7 +657,7 @@ function oxidePunktMittelwertNein (uploadedData){
 		
 			// extract date & data, merge, convert to tsv
 			var date = data.substr(0, 10);
-			var data = data.slice(1695);
+			var data = data.slice(1480);
 			var merge = header_Ox + "\n" + data;
 			var daten= d3.tsvParse(merge);
 		
@@ -758,6 +779,14 @@ function oxidePunktMittelwertNein (uploadedData){
 					}						
 				} 
 			}   
+			
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			} 
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -932,7 +961,15 @@ function oxidePunktMittelwertNein (uploadedData){
 						calculatedOutput[i][j] = "";
 					}			
 				} 
-			}   
+			}  
+
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}			
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -1022,7 +1059,7 @@ function oxideKommaMittelwertJa (uploadedData){
 		
 			// extract date & data, merge, convert to tsv
 			var date = data.substr(0, 10);
-			var data = data.slice(1695);
+			var data = data.slice(1480);
 			var merge = header_Ox + "\n" + data;
 			var daten = d3.tsvParse(merge);
 		
@@ -1038,7 +1075,6 @@ function oxideKommaMittelwertJa (uploadedData){
 				dateArray.push("");
 			}         		
 
-		
 			// extract lines and convert to array
 			var dataArray = [];
 			for (var i=0; i<lengthDaten; i++){
@@ -1064,7 +1100,6 @@ function oxideKommaMittelwertJa (uploadedData){
 			}  
 			var combinedString = header_Ox + "\n" + dataArrayString;
 			var combinedTSV= d3.tsvParse(combinedString);
-	
 
 			var calculatedOutput =[];
 	
@@ -1153,7 +1188,15 @@ function oxideKommaMittelwertJa (uploadedData){
 						calculatedOutput[i][j] = "";
 					}						
 				} 
-			}   
+			} 
+
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}				
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -1211,33 +1254,8 @@ function oxideKommaMittelwertJa (uploadedData){
 			// save as local txt			
  			var file = new File([finalOutput], date+ "_RFA_Oxide_Komma_bereinigt.txt", {type: "text/plain;charset=utf-8"}); 
 			saveAs(file); 
-			
-		//save as xlsx
-			//create workbook
-/* 			var wb = XLSX.utils.book_new();
-			//create sheet
-			wb.SheetNames.push("Test Sheet");
-			//create shee from array
-			var ws = XLSX.utils.aoa_to_sheet(ws_data);
-			//assign sheet objekt to woorkbook sheet array
-			wb.Sheets["Test Sheet"] = ws;
-			//slxs as binary
-			var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
-			//converte to octet 
-			function s2ab(s) { 
-                var buf = new ArrayBuffer(s.length); //convert s to arrayBuffer
-                var view = new Uint8Array(buf);  //create uint8array as viewer
-                for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF; //convert to octet
-                return buf;    
-			}
-			saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream;charset=UTF-8"}), 'test.xlsx');  */
-			//var file = new File([wbout], date+ "_oxide" + "_RFA.xlsx", {type: "application/octet-stream"}); 
 		
 }
-		
-
- 
-
 	
 	// change strings
    	function changeString(item, index, arr) {
@@ -1305,8 +1323,6 @@ function elementPunktMittelwertJa (uploadedData){
 			}  
 			var combinedString = header_El + "\n" + dataArrayString;
 			var combinedTSV= d3.tsvParse(combinedString);
-	
-	
 
 			var calculatedOutput =[];
 
@@ -1398,6 +1414,14 @@ function elementPunktMittelwertJa (uploadedData){
 					}						
 				} 
 			}   
+			
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}	
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -1491,7 +1515,7 @@ function oxidePunktMittelwertJa (uploadedData){
 		
 			// extract date & data, merge, convert to tsv
 			var date = data.substr(0, 10);
-			var data = data.slice(1695);
+			var data = data.slice(1480);
 			var merge = header_Ox + "\n" + data;
 			var daten= d3.tsvParse(merge);
 		
@@ -1525,8 +1549,6 @@ function oxidePunktMittelwertJa (uploadedData){
 			}  
 			var combinedString = header_Ox + "\n" + dataArrayString;
 			var combinedTSV= d3.tsvParse(combinedString);
-	
-	
 
 			var calculatedOutput =[];
 
@@ -1615,7 +1637,15 @@ function oxidePunktMittelwertJa (uploadedData){
 						calculatedOutput[i][j] = "";
 					}						
 				} 
-			}   
+			} 
+
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}				
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -1835,7 +1865,15 @@ function oxidePunktMittelwertJa (uploadedData){
 						calculatedOutput[i][j] = "";
 					}			
 				} 
-			}   
+			}
+
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}				
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -1907,7 +1945,7 @@ function oxideKommaMittelwertNeinError (uploadedData){
 			
 			// extract date & data, merge, convert to tsv
 			var date = data.substr(0, 10);
-			var data = data.slice(1695);
+			var data = data.slice(1480);
 			var merge = header_Ox + "\n" + data;
 			var daten = d3.tsvParse(merge);
 		
@@ -2033,6 +2071,14 @@ function oxideKommaMittelwertNeinError (uploadedData){
 					}						
 				} 
 			}   
+
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}	
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -2228,7 +2274,15 @@ function elementPunktMittelwertNeinError (uploadedData){
 						calculatedOutput[i][j] = "";
 					}						
 				} 
-			}   
+			}  
+
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}				
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -2299,7 +2353,7 @@ function oxidePunktMittelwertNeinError (uploadedData){
 		
 			// extract date & data, merge, convert to tsv
 			var date = data.substr(0, 10);
-			var data = data.slice(1695);
+			var data = data.slice(1480);
 			var merge = header_Ox + "\n" + data;
 			var daten= d3.tsvParse(merge);
 		
@@ -2421,6 +2475,14 @@ function oxidePunktMittelwertNeinError (uploadedData){
 					}						
 				} 
 			}   
+
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}	
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -2595,7 +2657,6 @@ function oxidePunktMittelwertNeinError (uploadedData){
 		
 			// push line with calculated value to new array
 			calculatedOutput.push(filteredValues[0]);	
-		
 			}
 
 	
@@ -2615,7 +2676,15 @@ function oxidePunktMittelwertNeinError (uploadedData){
 						calculatedOutput[i][j] = "";
 					}			
 				} 
-			}   
+			}  
+
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}				
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -2721,7 +2790,7 @@ function oxideKommaMittelwertJaError (uploadedData){
 		
 			// extract date & data, merge, convert to tsv
 			var date = data.substr(0, 10);
-			var data = data.slice(1695);
+			var data = data.slice(1480);
 			var merge = header_Ox + "\n" + data;
 			var daten = d3.tsvParse(merge);
 		
@@ -2852,7 +2921,15 @@ function oxideKommaMittelwertJaError (uploadedData){
 						calculatedOutput[i][j] = "";
 					}						
 				} 
-			}   
+			}  
+
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}				
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
@@ -2996,8 +3073,6 @@ function elementPunktMittelwertJaError (uploadedData){
 			var combinedString = header_El + "\n" + dataArrayString;
 			var combinedTSV= d3.tsvParse(combinedString);
 	
-	
-
 			var calculatedOutput =[];
 
 	
@@ -3088,7 +3163,15 @@ function elementPunktMittelwertJaError (uploadedData){
 					}						
 				} 
 			}   
-	
+
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}	
+			
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
 				calculatedOutput[i] = calculatedOutput[i].slice(0,109);
@@ -3194,7 +3277,7 @@ function oxidePunktMittelwertJaError (uploadedData){
 		
 			// extract date & data, merge, convert to tsv
 			var date = data.substr(0, 10);
-			var data = data.slice(1695);
+			var data = data.slice(1480);
 			var merge = header_Ox + "\n" + data;
 			var daten= d3.tsvParse(merge);
 		
@@ -3316,7 +3399,15 @@ function oxidePunktMittelwertJaError (uploadedData){
 						calculatedOutput[i][j] = "";
 					}						
 				} 
-			}   
+			}  
+
+			for (var i = 0; i <calculatedOutput.length; i++) { 
+				for (var j = 0; j < numberOfHeaders; j++) { 
+ 					if (calculatedOutput[i][j] === "Not available"){
+						calculatedOutput[i][j] = "";
+					}		 			
+				} 
+			}				
 	
 			// delete empty last column
 			for (var i = 0; i <calculatedOutput.length; i++) { 
